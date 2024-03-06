@@ -1,0 +1,15 @@
+﻿namespace PetHouse.Data
+{
+    public class Order
+    {
+        public int Id { get; set; }
+        public string ClientsId { get; set; }
+        public Client Clients { get; set; }
+        public int ProductsId { get; set; }
+        public Product Products { get; set; }
+        public string Quantity { get; set; }
+        public DateTime DateUpdate { get; set; }
+    }
+
+   
+}
