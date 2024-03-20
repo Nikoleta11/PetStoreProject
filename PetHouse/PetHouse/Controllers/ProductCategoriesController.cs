@@ -60,7 +60,7 @@ namespace PetHouse.Controllers
             {
                return View(productCategory); 
             }
-            _context.Add(productCategory);
+            _context.ProductCategories.Add(productCategory);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
             
@@ -98,7 +98,7 @@ namespace PetHouse.Controllers
             {
                 try
                 {
-                    _context.Update(productCategory);
+                    _context.ProductCategories.Update(productCategory);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)

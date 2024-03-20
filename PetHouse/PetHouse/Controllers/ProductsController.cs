@@ -63,7 +63,7 @@ namespace PetHouse.Controllers
             product.DateUpdate = DateTime.Now;
             if (ModelState.IsValid)
             {
-                _context.Add(product);
+                _context.Products.Add(product);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
@@ -106,7 +106,7 @@ namespace PetHouse.Controllers
             {
                 try
                 {
-                    _context.Update(product);
+                    _context.Products.Update(product);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
