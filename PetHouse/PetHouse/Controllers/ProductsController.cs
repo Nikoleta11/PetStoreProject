@@ -19,11 +19,15 @@ namespace PetHouse.Controllers
         }
 
         // GET: Products
-        public async Task<IActionResult> Index(int category)
+        public async Task<IActionResult> Index(int? category)
         {
-            var applicationDbContext = _context.
-                Products.Include(p => p.Aplieds).Include(p => p.ProductCategories);
-            return View(await applicationDbContext.ToListAsync());
+            var applicationDbContext = await _context.Products
+               .Include(p => p.ProductCategories).ToListAsync();
+            if (category !=null)
+            {
+                applicationDbContext = applicationDbContext.Where(x => x.ProductCategoriesId == category).ToList();
+            }
+            return View("Index", applicationDbContext);
         }
 
         // GET: Products/Details/5
