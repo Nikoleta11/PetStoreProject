@@ -1,8 +1,101 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+<link href="https://fonts.cdnfonts.com/css/chalkduster" rel="stylesheet">
+<style>
+    .image img {
+        max-width: 100%;
+        height: auto;
+    }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    .heading {
+        font-family: 'Chalkduster', sans-serif;
+        position: absolute;
+        top: 5%;
+        bottom: 0%;
+        left: 32.5%;
+        right: 0%;
+        height: 0px;
+        font-size: 75px;
+        text-shadow: 1px 1px #9bcbeb, 2px 2px #9bcbeb, 3px 3px #9bcbeb, 4px 4px #9bcbeb;
+        user-select: none;
+    }
+
+    .about-us {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .image-container{
+        width: 50%;
+        display: flex;
+        justify-content: center;
+    }
+    .image-container img{
+        border-radius: 50%;
+        width: 400px;
+        height: 400px;
+        object-fit: cover;
+        
+        
+    }
+    .text{
+        display: flex;
+        flex-direction:column;
+        width: 50%;
+        padding: 10px;
+        
+    }
+    .text span{
+        font-size: 35px;
+        font-family: cursive;
+        
+    }
+    .text p{
+        font-size: 18px;
+        font-family: cursive;
+    }
+    .info{
+        border: 4px dashed #9bcbeb;
+        padding: 10px;
+        text-align: justify-all;
+    }
+    #title{
+        text-align: end;
+    }
+</style>
+<div class="image" style="position: relative">
+    <div class="heading">
+        <span>PET HOUSE</span>
+    </div>
+    <img src="https://images.alphacoders.com/774/774079.jpg" />
 </div>
+
+<div class="about-us">
+    <div class="image-container"><img src="https://www.marketingdonut.co.uk/sites/default/files/production/image/petshop.jpg" /></div>
+    <div class="text">
+        <span class="title">За нас</span>
+        <p class="info">
+            Човекът от стотици години насам избира различни животни за свои домашни любимци.
+            Заедно с еволюцията на Света и подобряването на човешкия живот, неизбежно е и развитието
+            в отглеждането на животинските ни приятели.  Дали, защото хората ставаме по-човечни,
+            или защото имаме нужда от безусловната любов, която само животното е способно да ни даде,
+            ние все по-често обгрижваме любимците ни като равностойни членове на семействата ни.
+            
+        </p>
+    </div>
+    <div class="text">
+        <span id="title" class="title">Нашата цел</span>
+        <p class="info">
+            Именно затова, ние от PETHOUSE  вярваме, че можем да помогнем, както на Вас,
+            така и на Вашия домашен любимец. След многобройни анализи и проучвания,
+            успяхме да съберем най-доброто за домашните любимци- селектирахме всичко
+            необходимо за отглеждането им- от гранулирана и консервирана  храна за
+            всеки ден, през вкусни лакомства и паучове, до разнообразни аксесоари и козметични продукти.
+
+        </p>
+    </div>
+    <div class="image-container"><img src="https://images.squarespace-cdn.com/content/v1/54e7a1a6e4b08db9da801ded/fdecc7f0-42bf-4696-bd4c-73a868e5d1d2/81.jpg" /></div>
+    
+</div>
+
