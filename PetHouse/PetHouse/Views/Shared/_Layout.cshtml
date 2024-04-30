@@ -1,13 +1,117 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lugrasimo&display=swap" rel="stylesheet">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - PetHouse</title>
+
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/PetHouse.styles.css" asp-append-version="true" />
+    <style>
+        nav img {
+            display: flex;
+            width: 200px;
+        }
+
+        nav ul li {
+            font-weight: 500;
+        }
+
+
+
+        footer {
+            background-color: #CAE7FB;
+            border: 4px dashed #80C3F1;
+            display: flex;
+            justify-content: space-evenly;
+            padding: 8px 16px;
+            position: absolute;
+            top: 100%;
+            flex-wrap: wrap;
+            border-top-left-radius: 1%;
+            border-top-right-radius: 1%;
+            font-family: "Lugrasimo", cursive;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .footer-info {
+            width: 25%;
+        }
+
+        .footer-info-title {
+            font-family: cursive;
+            font-size: 28px;
+            color: white;
+        }
+
+        .socials-icons {
+            padding: 10px;
+        }
+
+        .socials-text {
+            padding: 10px;
+            font-size: 20px;
+        }
+
+        .socials a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .socials-title {
+            display: flex;
+            flex-direction: column;
+            color: white;
+            text-align: center !important;
+        }
+
+        .socials {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .socials-container {
+            display: flex;
+            flex-direction: row;
+            min-width: 250px;
+            border-bottom: 1px solid black;
+        }
+
+        #contacts-width {
+            max-width: 250px;
+        }
+
+
+
+
+
+
+
+        @@media screen and (max-width: 991px) {
+            .footer .socials-text {
+                font-size: 15px;
+            }
+        }
+
+        @@media screen and (max-width: 830px) {
+            .footer {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+    </style>
+
 </head>
+
 <body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
@@ -55,10 +159,52 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2024 - PetHouse - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+    <footer class="footer text-muted" style="bottom: auto;">
+        <div class="footer-info">
+            <div class="socials-title">
+                <span class="footer-info-title" style="font-family: "Lugrasimo", cursive;">Контакти</span>
+                <div class="socials">
+                    <div id="contacts-width" class="socials-container">
+                        <div class="socials-icons"><img draggable="false" src="https://static.vecteezy.com/system/resources/previews/020/009/614/original/email-and-mail-icon-black-free-png.png" width="50" /></div>
+                        <div class="socials-text"><span style="font-family: cursive;">pethouse@yahoo.com</span></div>
+                    </div>
+                </div>
+                <div class="socials">
+                    <div id="contacts-width" class="socials-container">
+                        <div class="socials-icons"><img draggable="false" src="https://cdn-icons-png.flaticon.com/512/15/15407.png" width="50" /></div>
+                        <div class="socials-text"><span style="font-family: cursive;">+359 883366111</span></div>
+                    </div>
+                </div>
+                <div class="socials">
+                    <div id="contacts-width" class="socials-container">
+                        <div class="socials-icons"><img draggable="false" src="https://freesvg.org/img/noun-project-462.png" width="50" /></div>
+                        <div class="socials-text"><span style="font-family: cursive;">ул. "Райко Даскалов" 4</span></div>
+                    </div>
+                </div>
+            </div>
         </div>
+        <div class="footer-info">
+            <div class="socials-title">
+                <span class="footer-info-title" style="font-family: " Lugrasimo", cursive;">Социални мрежи</span>
+                <div class="socials">
+                    <div class="socials-container">
+                        <div class="socials-icons"><a href="https://instagram.com"><img draggable="false" src="https://cdn4.iconfinder.com/data/icons/picons-social/57/38-instagram-2-512.png" width="50" /></div>
+                        <div class="socials-text"><span style="font-family: cursive;">instagram.com</span></div></a>
+                    </div>
+                </div>
+                <div class="socials">
+                    <div class="socials-container">
+                        <div class="socials-icons"><a href="https://facebook.com"><img draggable="false" src="https://seeklogo.com/images/F/facebook-icon-black-logo-133935095E-seeklogo.com.png" width="50" /></div>
+                        <div class="socials-text"><span style="font-family: cursive;">facebook.com</span></div></a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+
+
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
