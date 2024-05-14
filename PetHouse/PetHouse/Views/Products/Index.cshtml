@@ -11,7 +11,6 @@
         justify-content: space-evenly;
         flex-wrap: wrap;
         padding: 10px;
-        border: 2px solid black;
     }
 
     .card {
@@ -41,28 +40,39 @@
         justify-content: center;
         vertical-align: middle;
         height: 251.35px;
-        border-bottom: 2px solid black;
     }
 
         .card-image img {
             max-width: 225px;
         }
-        .card-description{
-            padding: 10px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-        }
-        .card-price span{
-            font-size: 24px;
-            text-shadow: 1px 1px #9bcbeb, 2px 2px #9bcbeb;
-            font-weight: 600;
-        }
+
+    .card-description {
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .card-price span {
+        font-size: 24px;
+        text-shadow: 1px 1px #9bcbeb, 2px 2px #9bcbeb;
+        font-weight: 600;
+    }
+    .card-order a{
+        border-radius: 9999px;
+        background-color: #619FC9;
+        border-color: #619FC9;
+        margin-top: 15px;
+    }
+    .card-order a:hover{
+            background-color: #427CA3;
+            border-color: #427CA3;
+    }
 </style>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <center><a asp-action="Create" class="btn btn-primary">Добави нов артикул</a></center>
 </p>
 <div class="cards-container">
     @foreach (var item in Model)
@@ -73,8 +83,11 @@
                 <div><img src="@Html.DisplayFor(model => item.Image)" /></div>
             </div>
             <div class="card-description">
-                <div style="font-size: 18px; font-weight: 600;">@Html.DisplayFor(model => item.Quantity)</div>
+                <div style="font-size: 18px; font-weight: 600; text-decoration: underline;">@Html.DisplayFor(model => item.Quantity)</div>
                 <div class="card-price"><span>@Html.DisplayFor(model => item.Price) лв.</span> </div>
+                <div class="card-order">
+                    <a asp-controller="Orders" asp-action="CreateProductOrder" asp-route-productId="@item.Id" type="submit" class="btn btn-primary">Поръчай</a>
+                </div>
             </div>
 
         </div>

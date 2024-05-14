@@ -12,15 +12,15 @@ using PetHouse.Data;
 namespace PetHouse.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240306081330_UpgradeMigraciq")]
-    partial class UpgradeMigraciq
+    [Migration("20240514071016_FirstMigration")]
+    partial class FirstMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.2")
+                .HasAnnotation("ProductVersion", "8.0.3")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -273,9 +273,8 @@ namespace PetHouse.Migrations
                     b.Property<int>("ProductsId")
                         .HasColumnType("int");
 
-                    b.Property<string>("Quantity")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 

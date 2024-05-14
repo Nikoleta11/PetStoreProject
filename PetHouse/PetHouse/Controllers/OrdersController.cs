@@ -78,7 +78,18 @@ namespace PetHouse.Controllers
             ViewData["ProductsId"] = new SelectList(_context.Products, "Id", "Name", order.ProductsId);
             return View(order);
         }
+        public async Task<IActionResult> CreateProductOrder(int productId)
+        {
+            Order order = new Order();
+            order.ProductsId = productId;
+            order.DateUpdate = DateTime.Now;
+            order.Quantity = productId;
+            order.ClientsId = _userManager.GetUserId(User);
 
+            _context.Orders.Add(order);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
         // GET: Orders/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {

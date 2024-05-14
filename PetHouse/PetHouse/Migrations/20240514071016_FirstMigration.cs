@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace PetHouse.Migrations
 {
     /// <inheritdoc />
-    public partial class UpgradeMigraciq : Migration
+    public partial class FirstMigration : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -227,7 +227,7 @@ namespace PetHouse.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     ClientsId = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     ProductsId = table.Column<int>(type: "int", nullable: false),
-                    Quantity = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Quantity = table.Column<int>(type: "int", nullable: false),
                     DateUpdate = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
