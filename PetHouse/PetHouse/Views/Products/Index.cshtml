@@ -4,89 +4,86 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<style>
+    .cards-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        padding: 10px;
+        border: 2px solid black;
+    }
+
+    .card {
+        width: 20%;
+        display: flex;
+        flex-direction: column;
+        border: 2px solid black;
+        margin: 0px 5px;
+        margin-bottom: 50px;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    .card-title {
+        text-align: center;
+        margin: 0px;
+        background-color: #9bcbeb;
+        color: white;
+        font-weight: 500;
+        font-size: 20px;
+        border-bottom: 2px solid black;
+    }
+
+    .card-image {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        vertical-align: middle;
+        height: 251.35px;
+        border-bottom: 2px solid black;
+    }
+
+        .card-image img {
+            max-width: 225px;
+        }
+        .card-description{
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .card-price span{
+            font-size: 24px;
+            text-shadow: 1px 1px #9bcbeb, 2px 2px #9bcbeb;
+            font-weight: 600;
+        }
+</style>
 
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                Име
-                @* @Html.DisplayNameFor(model => model.Name) *@
-            </th>
-            <th>
-                Категория
-              @*   @Html.DisplayNameFor(model => model.ProductCategories) *@
-            </th>
-            <th>
-                Размер
-                @* @Html.DisplayNameFor(model => model.Size) *@
-            </th>
-            <th>
-                Описание
-                @* @Html.DisplayNameFor(model => model.Description) *@
-            </th>
-            <th>
-                Количество
-               @*  @Html.DisplayNameFor(model => model.Quantity) *@
-            </th>
-            <th>
-                Изображение
-                @* @Html.DisplayNameFor(model => model.Image) *@
-            </th>
-            <th>
-                Цена
-                @* @Html.DisplayNameFor(model => model.Price) *@
-            </th>
-            <th>
-                Дата
-                @* @Html.DisplayNameFor(model => model.DateUpdate) *@
-            </th>
-            <th>
-                Приложение
-               @*  @Html.DisplayNameFor(model => model.Aplieds) *@
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ProductCategories.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Size)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Quantity)
-            </td>
-            <td>
-                    <img src="@Html.DisplayFor(modelItem => item.Image)" width="80"/>
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Price)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DateUpdate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Aplieds.Name)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+<div class="cards-container">
+    @foreach (var item in Model)
+    {
+        <div class="card">
+            <div class="card-title"><span>@Html.DisplayFor(model => item.Name)</span></div>
+            <div class="card-image">
+                <div><img src="@Html.DisplayFor(model => item.Image)" /></div>
+            </div>
+            <div class="card-description">
+                <div style="font-size: 18px; font-weight: 600;">@Html.DisplayFor(model => item.Quantity)</div>
+                <div class="card-price"><span>@Html.DisplayFor(model => item.Price) лв.</span> </div>
+            </div>
+
+        </div>
+
+    }
+</div>
+@*  <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a> *@
+
+
+
